@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Software Hub: repositorio de aplicaciones y archivos para Android, Linux y Windows.">
+  <title>Software Hub — Descargas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Software Hub inicio">
+      <span class="brand-mark"><span></span><span></span><span></span><span></span></span>
+      <span>Software<span class="brand-accent">Hub</span></span>
+    </a>
+    <nav class="nav">
+      <a class="active" href="#catalog">Explorar</a>
+      
+    </nav>
+    <a class="github-link" id="github-link" href="#" target="_blank" rel="noopener noreferrer">
+      <span>GitHub</span><span aria-hidden="true">↗</span>
+    </a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Software <span>Hub</span></h1>
+      <a class="primary-button" href="#catalog">Explorar catálogo <span>↓</span></a>
+      <div class="hero-orbit orbit-a"></div><div class="hero-orbit orbit-b"></div>
+      <div class="hero-cube">SH<span>+</span></div>
+    </section>
+
+    <section class="stats" aria-label="Resumen del catálogo">
+      <div><strong id="total-count">—</strong><span>elementos</span></div>
+      <div><strong id="android-count">—</strong><span>Android</span></div>
+      <div><strong id="linux-count">—</strong><span>Linux</span></div>
+      <div><strong id="windows-count">—</strong><span>Windows</span></div>
+    </section>
+
+    <section class="catalog-section" id="catalog">
+      <div class="section-heading">
+        <div><h2>Catálogo</h2></div>
+        <span class="updated" id="updated-label">Preparando catálogo…</span>
+      </div>
+      <div class="toolbar">
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Buscar aplicaciones, herramientas…" autocomplete="off"></label>
+        <div class="filters" role="group" aria-label="Filtrar por plataforma">
+          <button class="filter active" data-filter="all">Todo</button>
+          <button class="filter" data-filter="android">Android</button>
+          <button class="filter" data-filter="linux">Linux</button>
+          <button class="filter" data-filter="windows">Windows</button>
+        </div>
+      </div>
+      <div id="status" class="status"><span class="loader"></span> Conectando con el catálogo…</div>
+      <div class="app-grid" id="app-grid"></div>
+      <div class="empty-state hidden" id="empty-state">
+        <div class="empty-icon">⌕</div><h3>No encontramos resultados</h3><p>Prueba con otro término o cambia el filtro.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark"><span></span><span></span><span></span><span></span></span><span>Software<span class="brand-accent">Hub</span></span></a></footer>
+
+  <dialog id="app-dialog" class="app-dialog">
+    <button class="dialog-close" id="dialog-close" aria-label="Cerrar">×</button>
+    <div id="dialog-content"></div>
+  </dialog>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
