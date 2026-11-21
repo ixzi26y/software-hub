@@ -113,8 +113,13 @@
   }));
   document.getElementById("dialog-close").addEventListener("click", () => dialog.close());
   dialog.addEventListener("click", event => { if (event.target === dialog) dialog.close(); });
-  const githubUrl = config.websiteRepoUrl || "#";
-  document.getElementById("github-link").href = githubUrl;
-  document.getElementById("about-github").href = githubUrl;
-  loadReleases();
+const githubUrl = config.websiteRepoUrl || "#";
+
+const githubLink = document.getElementById("github-link");
+if (githubLink) githubLink.href = githubUrl;
+
+const aboutGithub = document.getElementById("about-github");
+if (aboutGithub) aboutGithub.href = githubUrl;
+
+loadReleases();
 })();
